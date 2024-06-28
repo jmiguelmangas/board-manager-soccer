@@ -5,28 +5,27 @@
 .board {
   position: relative;
   width: 1000px;
-  height: 800px; /* Aumentado para dar espacio a los jugadores */
-  background-color: #4CAF50; /* Verde del césped */
+  height: 600px;
+  background-color: #4CAF50;
   border: 1px solid black;
   margin: 0 auto;
+  cursor: pointer;
 }
 
-/* Líneas del campo */
 .field {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 600px; /* Ajustar la altura del campo */
+  height: 100%;
   box-sizing: border-box;
   border: 4px solid white;
 }
 
-/* Líneas del área de penalti */
 .penalty-area {
   position: absolute;
   width: 160px;
-  height: 280px;
+  height: 240px;
   border: 4px solid white;
-  top: 160px;
+  top: calc(50% - 120px);
   left: 0;
 }
 
@@ -35,13 +34,12 @@
   right: 0;
 }
 
-/* Área pequeña */
 .goal-area {
   position: absolute;
   width: 60px;
-  height: 160px;
+  height: 120px;
   border: 4px solid white;
-  top: 220px;
+  top: calc(50% - 60px);
   left: 0;
 }
 
@@ -50,11 +48,10 @@
   right: 0;
 }
 
-/* Círculo central */
 .center-circle {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border: 4px solid white;
   border-radius: 50%;
   top: 50%;
@@ -62,7 +59,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* Línea central */
 .center-line {
   position: absolute;
   width: 4px;
@@ -73,7 +69,6 @@
   transform: translateX(-50%);
 }
 
-/* Área de penalti punto */
 .penalty-spot {
   position: absolute;
   width: 8px;
@@ -81,19 +76,18 @@
   background-color: white;
   border-radius: 50%;
   top: 50%;
-  left: 100px;
+  left: 88px; /* Ajuste para que quede dentro del área de penalti */
   transform: translate(-50%, -50%);
 }
 
 .penalty-spot.right {
   left: auto;
-  right: 100px;
+  right: 88px; /* Ajuste para que quede dentro del área de penalti */
 }
 
-/* Fichas de jugadores */
 .player {
   position: absolute;
-  cursor: move;
+  cursor: pointer;
   background-color: white;
   border: 1px solid black;
   border-radius: 50%;
@@ -102,4 +96,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.player.selected {
+  border: 2px solid blue;
 }
